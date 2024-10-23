@@ -12,6 +12,9 @@ namespace WS_GRENUBEFACT
 {
     public partial class Service1 : ServiceBase
     {
+        public int time_event = Convert.ToInt32(System.Configuration.ConfigurationManager.AppSettings["TimeService"]);  //RUTA DEL RUC
+
+
         public Service1()
         {
             InitializeComponent();
