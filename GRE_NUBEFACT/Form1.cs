@@ -374,6 +374,12 @@ namespace GRE_NUBEFACT
         }
         private void GRE()
         {
+            string compania = string.Empty;
+            string SerieNumero = string.Empty;
+            string GuiaNumero = string.Empty;
+            int codigorespuesta = 0;
+            string mensajerespuesta = string.Empty; 
+            int filasAfectadas = 0; 
 
             try
             {
@@ -409,6 +415,10 @@ namespace GRE_NUBEFACT
                     /**/
 
                     //DocumentoElectronico oDocumento = new DocumentoElectronico();
+
+                    compania = dtc.Rows[i]["CompaniaSocio"].ToString();
+                    SerieNumero = dtc.Rows[i]["SerieNumero"].ToString();
+                    GuiaNumero = dtc.Rows[i]["GuiaNumero"].ToString();
 
                     //DocEntry_aux_1 = dtc.Rows[i]["DocEntry"].ToString();
                     //ObjType_aux_1 = dtc.Rows[i]["ObjType"].ToString();
@@ -452,6 +462,7 @@ namespace GRE_NUBEFACT
                     //    //productos.Add(oProducto);
                     //    //oDocumento.producto = productos.ToArray();
 
+
                     request.AddStringBody(body, DataFormat.Json);
                     //RestResponse response = await client.ExecuteAsync(request);
                     RestResponse response = client.Execute(request);
@@ -461,13 +472,26 @@ namespace GRE_NUBEFACT
                         // Deserializar el JSON en un objeto ApiResponse
                         var deserializedResponse = System.Text.Json.JsonSerializer.Deserialize<ApiResp>(response.Content);
 
-                        //// Acceder a los datos deserializados
-                        //Console.WriteLine("Nota Importante: " + deserializedResponse.NotaImportante);
-                        //Console.WriteLine("Tipo de Comprobante: " + deserializedResponse.TipoDeComprobante);
-                        //Console.WriteLine("Serie: " + deserializedResponse.Serie);
-                        //Console.WriteLine("Número: " + deserializedResponse.Numero);
-                        //Console.WriteLine("Aceptada por Sunat: " + deserializedResponse.AceptadaPorSunat);
-                        //Console.WriteLine("Error SOAP de Sunat: " + deserializedResponse.SunatSoapError);
+
+                        mensajerespuesta = string.Empty;
+                        mensajerespuesta = (" Mensaje " + SerieNumero + "-" + GuiaNumero + "  " +  deserializedResponse.nota_importante);
+                        codigorespuesta = 1;
+
+
+                        //ini_INSERT EN BD, respuesta
+                        filasAfectadas = Common.insertResponse(compania, SerieNumero, GuiaNumero, codigorespuesta, mensajerespuesta);
+
+                        // Verificar si se actualizaron filas
+                        if (filasAfectadas > 0)
+                        {
+                            //un log agregar, si fuera necesario
+                        }
+                        else
+                        {
+                            //un log agregar, si fuera necesario
+
+                        }
+
 
                         //INSERT EN BD, respuesta
 
@@ -481,10 +505,69 @@ namespace GRE_NUBEFACT
                         // Acceder a los datos del error
                         if (deserializedResponse != null)
                         {
-                            Console.WriteLine("Error: " + deserializedResponse.errors);
-                            Console.WriteLine("Código: " + deserializedResponse.codigo);
+                            //Console.WriteLine("Error: " + deserializedResponse.errors);
+                            //Console.WriteLine("Código: " + deserializedResponse.codigo);
+                            mensajerespuesta =string.Empty;
 
-                            //INSERT EN BD, respuesta
+
+                            if (deserializedResponse.codigo == 23)
+                            {
+
+                            }
+
+                            switch (Convert.ToInt32(deserializedResponse))
+                            {
+                                case 23:
+                                    mensajerespuesta = (" Codigo NubeFact : " + deserializedResponse.codigo + " -- " +
+                                                    " Mensaje " + deserializedResponse.errors);
+                                    codigorespuesta = 1;
+
+                                    //ini_INSERT EN BD, respuesta
+                                    filasAfectadas = Common.insertResponse(compania, SerieNumero, GuiaNumero, codigorespuesta, mensajerespuesta);
+
+                                    break;
+
+                                case 21:
+                                    mensajerespuesta = (" Codigo NubeFact : " + deserializedResponse.codigo + " -- " +
+                                                    " Mensaje " + deserializedResponse.errors);
+                                    codigorespuesta = 2;
+
+                                    //ini_INSERT EN BD, respuesta
+                                    filasAfectadas = Common.insertResponse(compania, SerieNumero, GuiaNumero, codigorespuesta, mensajerespuesta);
+
+                                    break;
+
+                                case 12:
+
+                                    break;
+
+                                default:
+
+                                    mensajerespuesta = (" Codigo NubeFact : " + deserializedResponse.codigo + " -- " +
+                                                    " Mensaje " + deserializedResponse.errors);
+                                    codigorespuesta = 2;
+
+                                    //ini_INSERT EN BD, respuesta
+                                    filasAfectadas = Common.insertResponse(compania, SerieNumero, GuiaNumero, codigorespuesta, mensajerespuesta);
+
+
+                                    break;
+                            
+                            }
+
+
+                            
+                            // Verificar si se actualizaron filas
+                            if (filasAfectadas > 0)
+                            {
+                                //un log agregar, si fuera necesario
+                            }
+                            else
+                            { 
+                                //un log agregar, si fuera necesario
+                                
+                            }
+                            //fin_INSERT EN BD, respuesta
                         }
                     }
 
@@ -1110,23 +1193,23 @@ namespace GRE_NUBEFACT
 
         public class ApiResp
         {
-            public string NotaImportante { get; set; }
-            public int TipoDeComprobante { get; set; }
-            public string Serie { get; set; }
-            public int Numero { get; set; }
-            public string Enlace { get; set; }
-            public bool AceptadaPorSunat { get; set; }
-            public string SunatDescription { get; set; }
-            public string SunatNote { get; set; }
-            public string SunatResponseCode { get; set; }
-            public string SunatSoapError { get; set; }
-            public string PdfZipBase64 { get; set; }
-            public string XmlZipBase64 { get; set; }
-            public string CdrZipBase64 { get; set; }
-            public string CadenaParaCodigoQr { get; set; }
-            public string EnlaceDelPdf { get; set; }
-            public string EnlaceDelXml { get; set; }
-            public string EnlaceDelCdr { get; set; }
+            public string nota_importante { get; set; }
+            public int tipo_de_comprobante { get; set; }
+            public string serie { get; set; }
+            public int numero { get; set; }
+            public string enlace { get; set; }
+            public bool aceptada_por_sunat { get; set; }
+            public string sunat_description { get; set; }
+            public string sunat_note { get; set; }
+            public string sunat_responsecode { get; set; }
+            public string sunat_soap_error { get; set; }
+            public string pdf_zip_base64 { get; set; }
+            public string xml_zip_base64 { get; set; }
+            public string cdr_zip_base64 { get; set; }
+            public string cadena_para_codigo_qr { get; set; }
+            public string enlace_del_pdf { get; set; }
+            public string enlace_del_xml { get; set; }
+            public string enlace_del_cdr { get; set; }
         }
 
         public class ErrorResponse

@@ -3,15 +3,15 @@
   "WorkspaceRootPath": "C:\\Users\\Administrador\\Desktop\\FREE\\GRE\\CF\\GITGRENUBEFACT\\GRE_NUBEFACT\\GRE_NUBEFACT\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{E8FF3E92-E8DD-4AAA-AA8B-586A4BB5C8DF}|GRE_NUBEFACT\\GRE_NUBEFACT.csproj|C:\\Users\\Administrador\\Desktop\\FREE\\GRE\\CF\\GITGRENUBEFACT\\GRE_NUBEFACT\\GRE_NUBEFACT\\gre_nubefact\\common.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8FF3E92-E8DD-4AAA-AA8B-586A4BB5C8DF}|GRE_NUBEFACT\\GRE_NUBEFACT.csproj|solutionrelative:gre_nubefact\\common.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E8FF3E92-E8DD-4AAA-AA8B-586A4BB5C8DF}|GRE_NUBEFACT\\GRE_NUBEFACT.csproj|c:\\users\\administrador\\desktop\\free\\gre\\cf\\gitgrenubefact\\gre_nubefact\\gre_nubefact\\gre_nubefact\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E8FF3E92-E8DD-4AAA-AA8B-586A4BB5C8DF}|GRE_NUBEFACT\\GRE_NUBEFACT.csproj|solutionrelative:gre_nubefact\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E8FF3E92-E8DD-4AAA-AA8B-586A4BB5C8DF}|GRE_NUBEFACT\\GRE_NUBEFACT.csproj|c:\\users\\administrador\\desktop\\free\\gre\\cf\\gitgrenubefact\\gre_nubefact\\gre_nubefact\\gre_nubefact\\common.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E8FF3E92-E8DD-4AAA-AA8B-586A4BB5C8DF}|GRE_NUBEFACT\\GRE_NUBEFACT.csproj|solutionrelative:gre_nubefact\\common.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E8FF3E92-E8DD-4AAA-AA8B-586A4BB5C8DF}|GRE_NUBEFACT\\GRE_NUBEFACT.csproj|c:\\users\\administrador\\desktop\\free\\gre\\cf\\gitgrenubefact\\gre_nubefact\\gre_nubefact\\gre_nubefact\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "AbsoluteMoniker": "D:0:0:{E8FF3E92-E8DD-4AAA-AA8B-586A4BB5C8DF}|GRE_NUBEFACT\\GRE_NUBEFACT.csproj|C:\\Users\\Administrador\\Desktop\\FREE\\GRE\\CF\\GITGRENUBEFACT\\GRE_NUBEFACT\\GRE_NUBEFACT\\gre_nubefact\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{E8FF3E92-E8DD-4AAA-AA8B-586A4BB5C8DF}|GRE_NUBEFACT\\GRE_NUBEFACT.csproj|solutionrelative:gre_nubefact\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
@@ -23,16 +23,12 @@
       "RelativeMoniker": "D:0:0:{E8FF3E92-E8DD-4AAA-AA8B-586A4BB5C8DF}|GRE_NUBEFACT\\GRE_NUBEFACT.csproj|solutionrelative:gre_nubefact\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F2DA4A6D-D7B8-41A7-BEE1-FF590FFEB458}|WS_GRENUBEFACT\\WS_GRENUBEFACT.csproj|c:\\users\\administrador\\desktop\\free\\gre\\cf\\gitgrenubefact\\gre_nubefact\\gre_nubefact\\ws_grenubefact\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F2DA4A6D-D7B8-41A7-BEE1-FF590FFEB458}|WS_GRENUBEFACT\\WS_GRENUBEFACT.csproj|C:\\Users\\Administrador\\Desktop\\FREE\\GRE\\CF\\GITGRENUBEFACT\\GRE_NUBEFACT\\GRE_NUBEFACT\\ws_grenubefact\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F2DA4A6D-D7B8-41A7-BEE1-FF590FFEB458}|WS_GRENUBEFACT\\WS_GRENUBEFACT.csproj|solutionrelative:ws_grenubefact\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E8FF3E92-E8DD-4AAA-AA8B-586A4BB5C8DF}|GRE_NUBEFACT\\GRE_NUBEFACT.csproj|C:\\Users\\Administrador\\Desktop\\FREE\\GRE\\CF\\GITGRENUBEFACT\\GRE_NUBEFACT\\GRE_NUBEFACT\\gre_nubefact\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E8FF3E92-E8DD-4AAA-AA8B-586A4BB5C8DF}|GRE_NUBEFACT\\GRE_NUBEFACT.csproj|solutionrelative:gre_nubefact\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E8FF3E92-E8DD-4AAA-AA8B-586A4BB5C8DF}|GRE_NUBEFACT\\GRE_NUBEFACT.csproj|C:\\Users\\Administrador\\Desktop\\FREE\\GRE\\CF\\GITGRENUBEFACT\\GRE_NUBEFACT\\GRE_NUBEFACT\\gre_nubefact\\comprobanteresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E8FF3E92-E8DD-4AAA-AA8B-586A4BB5C8DF}|GRE_NUBEFACT\\GRE_NUBEFACT.csproj|solutionrelative:gre_nubefact\\comprobanteresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F2DA4A6D-D7B8-41A7-BEE1-FF590FFEB458}|WS_GRENUBEFACT\\WS_GRENUBEFACT.csproj|C:\\Users\\Administrador\\Desktop\\FREE\\GRE\\CF\\GITGRENUBEFACT\\GRE_NUBEFACT\\GRE_NUBEFACT\\ws_grenubefact\\service1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -46,17 +42,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\Administrador\\Desktop\\FREE\\GRE\\CF\\GITGRENUBEFACT\\GRE_NUBEFACT\\GRE_NUBEFACT\\GRE_NUBEFACT\\Form1.cs",
               "RelativeDocumentMoniker": "GRE_NUBEFACT\\Form1.cs",
               "ToolTip": "C:\\Users\\Administrador\\Desktop\\FREE\\GRE\\CF\\GITGRENUBEFACT\\GRE_NUBEFACT\\GRE_NUBEFACT\\GRE_NUBEFACT\\Form1.cs",
               "RelativeToolTip": "GRE_NUBEFACT\\Form1.cs",
-              "ViewState": "AQIAALkBAAAAAAAAAAAAAMQBAABGAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAKQBAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-21T21:41:36.956Z",
               "IsPinned": true,
@@ -96,13 +92,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Common.cs",
               "DocumentMoniker": "C:\\Users\\Administrador\\Desktop\\FREE\\GRE\\CF\\GITGRENUBEFACT\\GRE_NUBEFACT\\GRE_NUBEFACT\\GRE_NUBEFACT\\Common.cs",
               "RelativeDocumentMoniker": "GRE_NUBEFACT\\Common.cs",
               "ToolTip": "C:\\Users\\Administrador\\Desktop\\FREE\\GRE\\CF\\GITGRENUBEFACT\\GRE_NUBEFACT\\GRE_NUBEFACT\\GRE_NUBEFACT\\Common.cs",
               "RelativeToolTip": "GRE_NUBEFACT\\Common.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwBIAAAA4AAAA",
+              "ViewState": "AQIAAEsAAAAAAAAAAAAAAFsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-23T21:10:11.393Z",
               "EditorCaption": ""
@@ -117,8 +113,7 @@
               "RelativeToolTip": "GRE_NUBEFACT\\App.config",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2024-10-23T20:45:49.178Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-23T20:45:49.178Z"
             },
             {
               "$type": "Document",
@@ -130,20 +125,7 @@
               "RelativeToolTip": "WS_GRENUBEFACT\\Program.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-23T20:38:45.626Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ComprobanteResponse.cs",
-              "DocumentMoniker": "C:\\Users\\Administrador\\Desktop\\FREE\\GRE\\CF\\GITGRENUBEFACT\\GRE_NUBEFACT\\GRE_NUBEFACT\\GRE_NUBEFACT\\ComprobanteResponse.cs",
-              "RelativeDocumentMoniker": "GRE_NUBEFACT\\ComprobanteResponse.cs",
-              "ToolTip": "C:\\Users\\Administrador\\Desktop\\FREE\\GRE\\CF\\GITGRENUBEFACT\\GRE_NUBEFACT\\GRE_NUBEFACT\\GRE_NUBEFACT\\ComprobanteResponse.cs",
-              "RelativeToolTip": "GRE_NUBEFACT\\ComprobanteResponse.cs",
-              "ViewState": "AQIAABwAAAAAAAAAAAAcwDMAAAAeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-21T22:02:54.798Z"
+              "WhenOpened": "2024-10-23T20:38:45.626Z"
             },
             {
               "$type": "Document",
@@ -154,8 +136,7 @@
               "ToolTip": "C:\\Users\\Administrador\\Desktop\\FREE\\GRE\\CF\\GITGRENUBEFACT\\GRE_NUBEFACT\\GRE_NUBEFACT\\GRE_NUBEFACT\\Form1.cs [Dise\u00F1o]",
               "RelativeToolTip": "GRE_NUBEFACT\\Form1.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-21T17:25:00.129Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2024-10-21T17:25:00.129Z"
             },
             {
               "$type": "Document",
@@ -167,8 +148,7 @@
               "RelativeToolTip": "GRE_NUBEFACT\\Form1.Designer.cs",
               "ViewState": "AQIAAGAAAAAAAAAAAAAowGAAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-21T22:02:38.322Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-21T22:02:38.322Z"
             },
             {
               "$type": "Document",
@@ -184,15 +164,14 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
               "Title": "Service1.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\Administrador\\Desktop\\FREE\\GRE\\CF\\GITGRENUBEFACT\\GRE_NUBEFACT\\GRE_NUBEFACT\\WS_GRENUBEFACT\\Service1.cs",
               "RelativeDocumentMoniker": "WS_GRENUBEFACT\\Service1.cs",
               "ToolTip": "C:\\Users\\Administrador\\Desktop\\FREE\\GRE\\CF\\GITGRENUBEFACT\\GRE_NUBEFACT\\GRE_NUBEFACT\\WS_GRENUBEFACT\\Service1.cs [Dise\u00F1o]",
               "RelativeToolTip": "WS_GRENUBEFACT\\Service1.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-21T21:41:12.948Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2024-10-21T21:41:12.948Z"
             }
           ]
         }
