@@ -379,7 +379,8 @@ namespace GRE_NUBEFACT
             string GuiaNumero = string.Empty;
             int codigorespuesta = 0;
             string mensajerespuesta = string.Empty; 
-            int filasAfectadas = 0; 
+            int filasAfectadas = 0;
+            string itemsdet = "";
 
             try
             {
@@ -420,13 +421,189 @@ namespace GRE_NUBEFACT
                     SerieNumero = dtc.Rows[i]["SerieNumero"].ToString();
                     GuiaNumero = dtc.Rows[i]["GuiaNumero"].ToString();
 
-                    //DocEntry_aux_1 = dtc.Rows[i]["DocEntry"].ToString();
-                    //ObjType_aux_1 = dtc.Rows[i]["ObjType"].ToString();
-                    //aux_docsubtype = dtc.Rows[i]["DocSubType"].ToString();
-                    //Descuento_global = dtc.Rows[i]["Porcentaje_GLOBAL"].ToString();
-                    //count_fact_referenciada = dtc.Rows[i]["band_ant"].ToString();      //  para saber si tiene alguna factura por anticipo referenciada
 
-                    ////oDocumento.facturaNegociable 
+                    //LISTAR DETALLE
+
+                    DataTable lista_detalle = Common.getDetalleDocument(compania, SerieNumero, GuiaNumero);
+
+                    itemsdet = string.Empty;
+
+                    for (int j = 0; j < lista_detalle.Rows.Count; j++)
+                    {
+                        itemsdet += @"{
+                        " + "\n" +
+                                            @"	""unidad_de_medida"": """ + lista_detalle.Rows[j]["unidad_de_medida"].ToString().Trim() + @""",
+                        " + "\n" +
+                                            @"	""codigo"": """ + lista_detalle.Rows[j]["codigo"].ToString().Trim() + @""",
+                        " + "\n" +
+                                            @"	""descripcion"": """ + lista_detalle.Rows[j]["descripcion"].ToString().Trim() + @""",
+                        " + "\n" +
+                                            @"	""cantidad"": """ + lista_detalle.Rows[j]["cantidad"].ToString().Trim() + @"""
+                        " + "\n" +
+                                            @"}";
+
+                        // Añadir una coma entre los objetos, excepto después del último elemento
+                        if (i < lista_detalle.Rows.Count - 1)
+                        {
+                            itemsdet += ",";
+                        }
+                        itemsdet += "\n";
+                    }
+
+                    //LISTAR CABECERA
+
+
+
+                    DataTable lista_cabecera = Common.getCabeceraDocument(compania, SerieNumero, GuiaNumero);
+
+
+                    body = string.Empty;
+
+                    for (int p = 0; p <= lista_cabecera.Rows.Count - 1; p++)
+                    {
+
+
+                        //            fecha = lista_anticipo.Rows[p]["fecha_LA"].ToString(),
+                        //            identificador = lista_anticipo.Rows[p]["identificador_LA"].ToString(),
+                        //            montoPrepagado = lista_anticipo.Rows[p]["montoPrepagado_LA"].ToString(),
+                        //            numerodocumento = lista_anticipo.Rows[p]["numerodocumento_LA"].ToString(),
+                        //            rucEmisorComprobante = lista_anticipo.Rows[p]["rucEmisorComprobante_LA"].ToString(),
+                        //            tipodocumento = lista_anticipo.Rows[p]["tipodocumento_LA"].ToString()
+
+                        body = @"{
+                        " + "\n" +
+                             @"	""operacion"": ""consultar_guia"",
+                        " + "\n" +
+                             @"	""tipo_de_comprobante"": 7,
+                        " + "\n" +
+                             @"	""serie"": """ + lista_cabecera.Rows[p]["serie"].ToString().Trim() + @""",
+
+                        " + "\n" +
+                             @"	""numero"": """ + lista_cabecera.Rows[p]["numero"].ToString().Trim() + @""",
+
+                        " + "\n" +
+                             @"	""cliente_tipo_de_documento"": """ + lista_cabecera.Rows[p]["cliente_tipo_de_documento"].ToString().Trim() + @""",
+                        
+                        " + "\n" +
+                             @"	""cliente_numero_de_documento"": """ + lista_cabecera.Rows[p]["cliente_numero_de_documento"].ToString().Trim() + @""",
+
+                        " + "\n" +
+                             @"	""cliente_denominacion"": """ + lista_cabecera.Rows[p]["cliente_denominacion"].ToString().Trim() + @""",
+
+                        " + "\n" +
+                             @"	""cliente_direccion"": """ + lista_cabecera.Rows[p]["cliente_direccion"].ToString().Trim() + @""",
+
+                        " + "\n" +
+                             @"	""cliente_email"": """ + lista_cabecera.Rows[p]["cliente_email"].ToString().Trim() + @""",
+
+                        " + "\n" +
+                             @"	""fecha_de_emision"": """ + lista_cabecera.Rows[p]["fecha_de_emision"].ToString().Trim() + @""",
+
+                        " + "\n" +
+                             @"	""observaciones"": """ + lista_cabecera.Rows[p]["observaciones"].ToString().Trim() + @""",
+
+                        " + "\n" +
+                             @"	""motivo_de_traslado"": """ + lista_cabecera.Rows[p]["motivo_de_traslado"].ToString().Trim() + @""",
+
+                        " + "\n" +
+                             @"	""peso_bruto_total"": """ + lista_cabecera.Rows[p]["peso_bruto_total"].ToString().Trim() + @"""  ,                      
+
+                        " + "\n" +
+                             @"	""peso_bruto_unidad_de_medida"": """ + lista_cabecera.Rows[p]["peso_bruto_unidad_de_medida"].ToString().Trim() + @""" ,
+
+                        " + "\n" +
+                             @"	""numero_de_bultos"": """ + lista_cabecera.Rows[p]["numero_de_bultos"].ToString().Trim() + @""" ,
+
+                        " + "\n" +
+                             @"	""tipo_de_transporte"": """ + lista_cabecera.Rows[p]["tipo_de_transporte"].ToString().Trim() + @""" ,
+
+                        " + "\n" +
+                             @"	""fecha_de_inicio_de_traslado"": """ + lista_cabecera.Rows[p]["fecha_de_inicio_de_traslado"].ToString().Trim() + @""" ,
+
+                        " + "\n" +
+                             @"	""transportista_documento_tipo"": """ + lista_cabecera.Rows[p]["transportista_documento_tipo"].ToString().Trim() + @""" , 
+
+                        " + "\n" +
+                             @"	""transportista_documento_numero"": """ + lista_cabecera.Rows[p]["transportista_documento_numero"].ToString().Trim() + @""" ,
+
+                        " + "\n" +
+                             @"	""transportista_denominacion"": """ + lista_cabecera.Rows[p]["transportista_denominacion"].ToString().Trim() + @""" ,
+
+                        " + "\n" +
+                             @"	""transportista_placa_numero"": """ + lista_cabecera.Rows[p]["transportista_placa_numero"].ToString().Trim() + @""" ,
+                        
+                        " + "\n" +
+                             @"	""transportista_placa_numero"": """ + lista_cabecera.Rows[p]["transportista_placa_numero"].ToString().Trim() + @""",
+
+                        " + "\n" +
+                                    @"	""conductor_documento_tipo"": ""1"",
+                        " + "\n" +
+                                    @"	""conductor_documento_numero"": ""XXXXXXXX"",
+                        " + "\n" +
+                                    @"	""conductor_nombre"": ""JORGE"",
+                        " + "\n" +
+                                    @"	""conductor_apellidos"": ""LOPEZ"",
+                        " + "\n" +
+                                    @"	""conductor_numero_licencia"": ""QXXXXXXXX"",
+                        
+
+
+                        " + "\n" +
+                             @"	""punto_de_partida_ubigeo"": """ + lista_cabecera.Rows[p]["punto_de_partida_ubigeo"].ToString().Trim() + @""",
+
+                        " + "\n" +
+                             @"	""punto_de_partida_direccion"": """ + lista_cabecera.Rows[p]["punto_de_partida_direccion"].ToString().Trim() + @""" ,
+
+                        " + "\n" +
+                             @"	""punto_de_partida_codigo_establecimiento_sunat"": """ + lista_cabecera.Rows[p]["punto_de_partida_codigo_establecimiento_sunat"].ToString().Trim() + @""",
+
+                        " + "\n" +
+                             @"	""punto_de_llegada_ubigeo"": """ + lista_cabecera.Rows[p]["punto_de_llegada_ubigeo"].ToString().Trim() + @""" ,
+
+                        " + "\n" +
+                             @"	""punto_de_llegada_direccion"": """ + lista_cabecera.Rows[p]["punto_de_llegada_direccion"].ToString().Trim() + @""",
+
+                        " + "\n" +
+                             @"	""punto_de_llegada_codigo_establecimiento_sunat"": """ + lista_cabecera.Rows[p]["punto_de_llegada_codigo_establecimiento_sunat"].ToString().Trim() + @""",
+
+                        " + "\n" +
+                             @"	""formato_de_pdf"": """",
+                        
+                        " +   "\n" +
+
+                        @"	""items"": [
+                        " + "\n" +
+                        itemsdet +
+                        @"	],
+                        " + "\n" +
+
+                             @"	""vehiculos_secundarios"": [
+                        " + "\n" +
+                                    @"		{
+                        " + "\n" +
+                                    @"			""placa_numero"": """ + lista_cabecera.Rows[p]["placa_numero"].ToString().Trim() + @"""		},
+                        " + "\n" +
+                                    @"		{
+                        " + "\n" +
+                                    @"			""placa_numero"": """ + lista_cabecera.Rows[p]["placa_numero1"].ToString().Trim() + @"""		}
+                        " + "\n" +
+                                    @"	]
+                        " + "\n" +
+                        @"
+
+                        " + "\n" +
+                             @"}
+                        " + "\n" +
+                             @"
+                        " + "\n" +
+                             @"";
+
+
+
+                    };
+
+                    //LISTAR DETALLE
+
 
                     ////standd by
                     //#region FACT ANTICIPO
@@ -515,7 +692,7 @@ namespace GRE_NUBEFACT
 
                             }
 
-                            switch (Convert.ToInt32(deserializedResponse))
+                            switch (Convert.ToInt32(deserializedResponse.codigo))
                             {
                                 case 23:
                                     mensajerespuesta = (" Codigo NubeFact : " + deserializedResponse.codigo + " -- " +

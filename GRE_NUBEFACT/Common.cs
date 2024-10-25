@@ -43,6 +43,60 @@ namespace GRE_NUBEFACT
             }
         }
 
+        public static DataTable getCabeceraDocument(string compania,string serieNumero,string guiaNumero)
+        {
+            using (DataTable dt = new DataTable())
+            {
+                using (SqlConnection con = new SqlConnection(Conexion_bd))
+                {
+                    using (SqlCommand cmd = new SqlCommand(SP_LIST_PENDIENTE_ENVIO_GRE_CABECERA))
+                    {
+                        cmd.Connection = con;
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.AddWithValue("@compania", SqlDbType.NVarChar).Value = compania;
+                        cmd.Parameters.AddWithValue("@serieNumero", SqlDbType.NVarChar).Value = serieNumero;
+                        cmd.Parameters.AddWithValue("@guiaNumero", SqlDbType.NVarChar).Value = guiaNumero;
+
+                        using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                        {
+
+                            sda.Fill(dt);
+                        }
+                    }
+                }
+                return dt;
+            }
+        }
+
+        public static DataTable getDetalleDocument(string compania, string serieNumero, string guiaNumero)
+        //public static DataTable getCabeceraDocument()
+        {
+            using (DataTable dt = new DataTable())
+            {
+                using (SqlConnection con = new SqlConnection(Conexion_bd))
+                {
+                    using (SqlCommand cmd = new SqlCommand(SP_LIST_PENDIENTE_ENVIO_GRE_DETALLE))
+                    {
+                        cmd.Connection = con;
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.AddWithValue("@compania", SqlDbType.NVarChar).Value = compania;
+                        cmd.Parameters.AddWithValue("@serieNumero", SqlDbType.NVarChar).Value = serieNumero;
+                        cmd.Parameters.AddWithValue("@guiaNumero", SqlDbType.NVarChar).Value = guiaNumero;
+
+                        using (SqlDataAdapter sda = new SqlDataAdapter(cmd))
+                        {
+
+                            sda.Fill(dt);
+                        }
+                    }
+                }
+                return dt;
+            }
+        }
+
+
         //public static DataTable insertResponse(string compania , string serie , string correlativo, int codigo,string mensajerespuesta)
         //{
 
