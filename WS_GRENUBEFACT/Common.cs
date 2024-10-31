@@ -7,17 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GRE_NUBEFACT
+namespace WS_GRENUBEFACT
 {
     class Common
     {
-
         static string Conexion_bd = ConfigurationManager.ConnectionStrings["db_gre"].ConnectionString;
 
-        private const string SP_LIST_PENDIENTE_ENVIO_GRE            = "SP_LIST_PENDIENTE_ENVIO_GRE";
-        private const string SP_INSERT_RESPUESTA                    = "SP_INSERT_RESPUESTA";
-        private const string SP_LIST_PENDIENTE_ENVIO_GRE_CABECERA   = "SP_LIST_PENDIENTE_ENVIO_GRE_CABECERA";
-        private const string SP_LIST_PENDIENTE_ENVIO_GRE_DETALLE    = "SP_LIST_PENDIENTE_ENVIO_GRE_DETALLE";
+        private const string SP_LIST_PENDIENTE_ENVIO_GRE = "SP_LIST_PENDIENTE_ENVIO_GRE";
+        private const string SP_INSERT_RESPUESTA = "SP_INSERT_RESPUESTA";
+        private const string SP_LIST_PENDIENTE_ENVIO_GRE_CABECERA = "SP_LIST_PENDIENTE_ENVIO_GRE_CABECERA";
+        private const string SP_LIST_PENDIENTE_ENVIO_GRE_DETALLE = "SP_LIST_PENDIENTE_ENVIO_GRE_DETALLE";
 
 
         public static DataTable getDocumentoByIndicator()
@@ -43,7 +42,7 @@ namespace GRE_NUBEFACT
             }
         }
 
-        public static DataTable getCabeceraDocument(string compania,string serieNumero,string guiaNumero)
+        public static DataTable getCabeceraDocument(string compania, string serieNumero, string guiaNumero)
         {
             using (DataTable dt = new DataTable())
             {
@@ -131,6 +130,5 @@ namespace GRE_NUBEFACT
 
             return filasAfectadas;  // Retorna el número de filas afectadas
         }
-
     }
 }
